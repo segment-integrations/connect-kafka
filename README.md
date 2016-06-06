@@ -2,6 +2,8 @@
 
 Connect [Segment](https://segment.com/) to [Kafka](http://kafka.apache.org/) in 5 minutes. Pipe Segment's data sources into your Kafka cluster.
 
+Release: `ALPHA`
+
 ## Features
 `connect-kafka` is a simple server that you deploy in your infrastructure. It listens for Segment events and forwards them to the Kafka topic of your choice.
 
@@ -50,9 +52,6 @@ You can open up a localtunnel on your local machine while you're testing:
 ```
 npm install -g localtunnel
 lt --port 3000
-```
-```
-your url is: https://aqjujyhnck.localtunnel.me
 ```
 
 Enter the resulting localtunnel url as the Segment webhook with `/listen` appended, like: `https://aqjujyhnck.localtunnel.me/listen`
