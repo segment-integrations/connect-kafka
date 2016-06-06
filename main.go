@@ -10,8 +10,8 @@ import (
 	_ "net/http/pprof"
 
 	log "github.com/Sirupsen/logrus"
-	"github.com/segmentio/connect-kafka/internal/api"
-	"github.com/segmentio/connect-kafka/internal/kafka"
+	"github.com/segment-integrations/connect-kafka/internal/api"
+	"github.com/segment-integrations/connect-kafka/internal/kafka"
 	"github.com/tj/docopt"
 )
 
