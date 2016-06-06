@@ -14,6 +14,7 @@ Release: `ALPHA`
 - Supports any Kafka cluster 
 - Built with [Heroku Kafka](https://www.heroku.com/kafka) support in mind (with public/private space support)
 - Deploys in 5 minutes
+- Allows SSL (or not) connections
 - Supports all Segment standard methods (`identify`, `track`, `page`, `screen`, `group`)
 
 ## Quickstart
@@ -22,6 +23,12 @@ Release: `ALPHA`
 2. *Setup Webbook* - Enter connect-kafka's listen address into your Segment webhook menu.
 
 ### Connect to Kafka
+
+You can connect to any internal Kafka deployment. 
+
+#### Heroku Kafka
+
+Below is an example to connect to a Heroku Kafka in a public space (via SSL):
 
 ```bash
 go get -u github.com/segment-integrations/connect-kafka
