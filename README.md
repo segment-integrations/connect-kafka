@@ -39,3 +39,20 @@ connect-kafka
 2. Add your `connect-kafka` server's address to the webhook integration's settings.
 
 ![](http://g.recordit.co/XcyIz2fqJv.gif)
+
+
+## Testing
+
+### via localtunnel
+
+You can open up a localtunnel on your local machine while you're testing: 
+
+```
+npm install -g localtunnel
+lt --port 3000
+```
+```
+your url is: https://aqjujyhnck.localtunnel.me
+```
+
+Enter the resulting localtunnel url as the Segment webhook with `/listen` appended, like: `https://aqjujyhnck.localtunnel.me/listen`
