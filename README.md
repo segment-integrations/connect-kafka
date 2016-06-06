@@ -9,7 +9,7 @@ Connect [Segment](https://segment.com/) to [Kafka](http://kafka.apache.org/) in 
 - Deploys in your infrastructure
 - Supports any Kafka cluster 
 - Built with [Heroku Kafka](https://www.heroku.com/kafka) support in mind (with public/private space support)
-- Takes 10 minutes to deploy
+- Deploys in 5 minutes
 - Supports all Segment standard methods (`identify`, `track`, `page`, `screen`, `group`)
 
 ## Quickstart
