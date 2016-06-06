@@ -25,17 +25,20 @@ Release: `ALPHA`
 
 ```bash
 go get -u github.com/segment-integrations/connect-kafka
+heroku config:get KAFKA_URL -a kafka-integration-demo  # copy the kafka broker urls into command below
 heroku config:get KAFKA_TRUSTED_CERT -a kafka-integration-demo > kafka_trusted_cert.cer
 heroku config:get KAFKA_CLIENT_CERT -a kafka-integration-demo > kafka_client_cert.cer
 heroku config:get KAFKA_CLIENT_CERT_KEY -a kafka-integration-demo > kafka_client_key_cert.cer
-connect-kafka 
+connect-kafka \
  --debug \
- --topic=segment \ 
- --broker=kafka+ssl://ec2-50-16-10-110.compute-1.amazonaws.com:9096 \ --broker=kafka+ssl://ec2-52-7-67-181.compute-1.amazonaws.com:9096 \ --broker=kafka+ssl://ec2-23-25-240-35.compute-1.amazonaws.com:9096 \
- --trusted-cert=kafka_trusted_cert.cer \ 
+ --topic=segment \
+ --broker=kafka+ssl://ec2-51-16-10-109.compute-1.amazonaws.com:9096 \
+ --broker=kafka+ssl://ec2-62-7-61-181.compute-1.amazonaws.com:9096 \
+ --broker=kafka+ssl://ec2-33-20-240-35.compute-1.amazonaws.com:9096 \
+ --trusted-cert=kafka_trusted_cert.cer \
  --client-cert=kafka_client_cert.cer \
  --client-cert-key=kafka_client_key_cert.cer
-```
+ ```
 
 ### Setup Webhook
 
