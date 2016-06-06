@@ -4,6 +4,8 @@ Connect [Segment](https://segment.com/) to [Kafka](http://kafka.apache.org/) in 
 
 Release: `ALPHA`
 
+<img src="http://hortonworks.com/wp-content/uploads/2016/03/kafka-logo-wide.png" data-canonical-src="http://hortonworks.com/wp-content/uploads/2016/03/kafka-logo-wide.png" width="200" height="105" />
+
 ## Features
 `connect-kafka` is a simple server that you deploy in your infrastructure. It listens for Segment events and forwards them to the Kafka topic of your choice.
 
