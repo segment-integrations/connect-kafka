@@ -67,3 +67,7 @@ lt --port 3000
 ```
 
 Enter the resulting localtunnel url as the Segment webhook with `/listen` appended, like: `https://aqjujyhnck.localtunnel.me/listen`
+
+## License
+
+ MIT
