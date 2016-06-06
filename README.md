@@ -24,7 +24,32 @@ Release: `ALPHA`
 
 ### Connect to Kafka
 
+```
+go get -u github.com/segment-integrations/connect-kafka
+```
+
 You can connect to any internal Kafka deployment. 
+
+```
+$ connect-kafka -h
+
+Usage:
+  connect-kafka
+    [--debug]
+    --topic=<topic>
+    --broker=<url>...
+    [--listen=<addr>]
+    [--trusted-cert=<path> --client-cert=<path> --client-cert-key=<path>]
+  connect-kafka -h | --help
+  connect-kafka --version
+
+Options:
+  -h --help                   Show this screen
+  --version                   Show version
+  --topic=<topic>             Kafka topic name
+  --listen=<addr>             Address to listen on [default: localhost:3000]
+  --broker=<url>              Kafka broker URL
+```
 
 #### Heroku Kafka
 
