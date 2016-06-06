@@ -3,7 +3,7 @@
 Connect [Segment](https://segment.com/) to [Kafka](http://kafka.apache.org/) in 5 minutes. Pipe Segment's data sources into your Kafka cluster.
 
 ## Features
-`connect-kafka` is a simple server that you deploy in your infrastructure. It listens for Segment data stream events and forwards them to your Kafka instance.
+`connect-kafka` is a simple server that you deploy in your infrastructure. It listens for Segment events and forwards them to the Kafka topic of your choice.
 
 - Easily forward web, mobile, server analytics events to your Kafka instance
 - Deploys in your infrastructure
