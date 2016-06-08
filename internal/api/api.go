@@ -8,7 +8,6 @@ import (
 	"github.com/gohttp/app"
 	"github.com/gohttp/logger"
 	"github.com/gohttp/response"
-	"github.com/segmentio/kit/log"
 )
 
 // Api structure
@@ -38,8 +37,6 @@ func (s *Server) requestHandler(w http.ResponseWriter, r *http.Request) {
 		response.InternalServerError(w, err.Error())
 		return
 	}
-
-	log.Debugf("Message: %v", string(b))
 
 	_, _, err = s.kafkaProducer.SendMessage(&sarama.ProducerMessage{
 		Topic: s.kafkaTopic,
