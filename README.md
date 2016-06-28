@@ -27,13 +27,13 @@ Release: `ALPHA`
 Download `connect-kafka` using curl:
 
 ```bash
-curl -s https://connect.segment.com.s3-us-west-2.amazonaws.com/connect-kafka-install.sh | sh
+curl -s http://connect.segment.com/install-connect-kafka.sh | sh
 ```
 
 If you just want the binary and install it yourself:
 
 ```bash
-https://connect.segment.com.s3-us-west-2.amazonaws.com/connect-kafka-darwin-amd64
+http://connect.segment.com/connect-kafka-darwin-amd64
 ```
 
 You can also use Docker:
