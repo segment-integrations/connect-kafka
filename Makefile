@@ -5,4 +5,11 @@ build: main.go
 clean:
 	@rm -rf target
 
-.PHONY: clean
+docker:
+	@./package.sh linux > /dev/null
+	@docker build -t segment/connect-kafka . > /dev/null
+
+docker-push: docker
+	@docker push segment/connect-kafka
+
+.PHONY: clean docker

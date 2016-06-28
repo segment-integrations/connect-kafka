@@ -11,7 +11,7 @@ Release: `ALPHA`
 
 - Easily forward web, mobile, server analytics events to your Kafka instance
 - Deploys in your infrastructure
-- Supports any Kafka cluster 
+- Supports any Kafka cluster
 - Built with [Heroku Kafka](https://www.heroku.com/kafka) support in mind (with public/private space support)
 - Deploys in 5 minutes
 - Allows SSL (or not) connections
@@ -24,11 +24,26 @@ Release: `ALPHA`
 
 ### Connect to Kafka
 
-```
-go get -u github.com/segment-integrations/connect-kafka
+Download `connect-kafka` using curl:
+
+```bash
+curl -s https://connect.segment.com.s3-us-west-2.amazonaws.com/connect-kafka-install.sh | sh
 ```
 
-You can connect to any internal Kafka deployment. 
+If you just want the binary and install it yourself:
+
+```bash
+https://connect.segment.com.s3-us-west-2.amazonaws.com/connect-kafka-darwin-amd64
+```
+
+You can also use Docker:
+
+```bash
+make docker
+docker run segment/connect-kafka [...]
+```
+
+You can connect to any internal Kafka deployment.
 
 ```
 $ connect-kafka -h
@@ -84,7 +99,7 @@ connect-kafka \
 
 ### via localtunnel
 
-You can open up a localtunnel on your local machine while you're testing: 
+You can open up a localtunnel on your local machine while you're testing:
 
 ```
 npm install -g localtunnel
