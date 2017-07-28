@@ -1,26 +1,39 @@
 # connect-kafka
 
-Connect [Segment](https://segment.com/) to [Kafka](http://kafka.apache.org/) in 5 minutes. Pipe Segment's data sources into your Kafka cluster.
+This program is an example implementation of a [Segment](https://segment.com/) [Webhook](https://segment.com/docs/integrations/webhooks) consumer that publishes events to [Kafka](http://kafka.apache.org/).
 
-Release: `ALPHA`
+This is not an officially supported Segment product, but is meant to demonstrate a simple server that you can fork or emulate to route Segment data to your internal systems. It may even suit your needs as is! 
 
 <img src="http://hortonworks.com/wp-content/uploads/2016/03/kafka-logo-wide.png" data-canonical-src="http://hortonworks.com/wp-content/uploads/2016/03/kafka-logo-wide.png" width="200" height="105" />
 
 ## Features
-`connect-kafka` is a simple server that you deploy in your infrastructure. It listens for Segment events and forwards them to the Kafka topic of your choice.
+`connect-kafka` is a simple server that you deploy in your infrastructure and expose to the internet. It listens for Segment events and forwards them to the Kafka topic of your choice.
 
 - Easily forward web, mobile, server analytics events to your Kafka instance
 - Deploys in your infrastructure
 - Supports any Kafka cluster
 - Built with [Heroku Kafka](https://www.heroku.com/kafka) support in mind (with public/private space support)
-- Deploys in 5 minutes
-- Allows SSL (or not) connections
+- Supports SSL (or not) connections to your cluster
 - Supports all Segment standard methods (`identify`, `track`, `page`, `screen`, `group`)
 
 ## Quickstart
 
 1. *Connect to Kafka* - connect the `connect-kafka` to your Kafka instance.
 2. *Setup Webbook* - Enter connect-kafka's listen address into your Segment webhook menu.
+
+## FAQ
+
+#### Does this support shared secret authentication? 
+
+Not yet, though we'd love a contribution that adds it! 
+
+#### How do Segment Webhooks behave if my server goes down?
+
+We will retry the requests to the server 5 times over an hour if your server becomes unavailable.
+
+#### Will the events arrive in order?
+
+Because we're dealing with unbounded streaming data, we can't guarantee that your events arrive in the absolute order that they were collected in your client devices. As such, we recommend using the `timestamp` fields on each message with event-time windowing approaches in your destinations and streaming data applications.
 
 ### Connect to Kafka
 
