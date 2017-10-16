@@ -8,6 +8,7 @@ import (
 func NewProducer(c *Config) (sarama.SyncProducer, error) {
 	config := sarama.NewConfig()
 	config.Producer.Return.Errors = true
+	config.Producer.Return.Successes = true
 	config.ClientID = uuid.NewV4().String()
 
 	// TLS
