@@ -63,10 +63,8 @@ $ connect-kafka -h
 
 Usage:
   connect-kafka
-    [--debug]
     --topic=<topic>
     --broker=<url>...
-    [--listen=<addr>]
     [--trusted-cert=<path> --client-cert=<path> --client-cert-key=<path>]
   connect-kafka -h | --help
   connect-kafka --version
@@ -75,7 +73,6 @@ Options:
   -h --help                   Show this screen
   --version                   Show version
   --topic=<topic>             Kafka topic name
-  --listen=<addr>             Address to listen on [default: localhost:3000]
   --broker=<url>              Kafka broker URL
 ```
 
@@ -90,7 +87,6 @@ heroku config:get KAFKA_TRUSTED_CERT -a kafka-integration-demo > kafka_trusted_c
 heroku config:get KAFKA_CLIENT_CERT -a kafka-integration-demo > kafka_client_cert.cer
 heroku config:get KAFKA_CLIENT_CERT_KEY -a kafka-integration-demo > kafka_client_key_cert.cer
 connect-kafka \
- --debug \
  --topic=segment \
  --broker=kafka+ssl://ec2-51-16-10-109.compute-1.amazonaws.com:9096 \
  --broker=kafka+ssl://ec2-62-7-61-181.compute-1.amazonaws.com:9096 \
