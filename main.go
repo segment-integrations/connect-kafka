@@ -3,19 +3,18 @@ package main
 import (
 	_ "net/http/pprof"
 
+	"github.com/Sirupsen/logrus"
 	"github.com/segmentio/connect"
+	"github.com/tj/docopt"
 )
 
-const (
-	Version = "0.0.1-beta"
-)
+const version = "0.0.1-beta"
 
 var usage = `
 Usage:
   connect-kafka
     --topic=<topic>
     --broker=<url>...
-    [--trusted-cert=<path> --client-cert=<path> --client-cert-key=<path>]
   connect-kafka -h | --help
   connect-kafka --version
 
@@ -27,5 +26,18 @@ Options:
 `
 
 func main() {
-	connect.Run(&KafkaIntegration{})
+	m, err := docopt.Parse(usage, nil, true, version, false)
+	if err != nil {
+		logrus.Fatalf("parse flags error: %v", err)
+	}
+
+	var (
+		brokers = m["--broker"].([]string)
+		topic   = m["--topic"].(string)
+	)
+
+	connect.Run(&KafkaIntegration{
+		Brokers: brokers,
+		Topic:   topic,
+	})
 }
